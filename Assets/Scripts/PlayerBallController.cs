@@ -48,7 +48,10 @@ public class PlayerBallController : MonoBehaviour
                     Debug.Log("exploding - exploding - exploding - exploding");
                 }
                 */
-                Destroy(collision.transform.parent.gameObject);
+                Destroy(collision.transform.parent.gameObject, 0.5f);
+
+                // TODO - Add Text for Super Speed
+                // TODO - Add Particles to the ball for a nice effect
             }
         }
 
