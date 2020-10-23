@@ -25,8 +25,6 @@ public class PlayerBallController : MonoBehaviour
         if (ignoreDoubleCollision)
             return;
 
-        Debug.Log("Ball Touched Something");
-
         // Sets the ball speed to zero
         playerBallRigBody.velocity = Vector3.zero;
 
