@@ -8,8 +8,10 @@ public class PlayerBallController : MonoBehaviour
     public float impulseForce = 5f;
     private Vector3 startPos;
     private bool ignoreDoubleCollision;
-    // public int perfectPass = 0;
-    // public bool isSuperSpeedActive;
+    public int perfectPass = 0;
+    [SerializeField] private int perfectPassTrigger = 3;
+    public int superSpeed = 10;
+    public bool isSuperSpeedActive;
 
     private void Awake()
     {
@@ -19,12 +21,12 @@ public class PlayerBallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // // activate super speed
-        // if (perfectPass >= 3 && !isSuperSpeedActive)
-        // {
-        //     isSuperSpeedActive = true;
-        //     rb.AddForce(Vector3.down * 10, ForceMode.Impulse);
-        // }
+        // Activates Super Speed
+        if (perfectPass >= perfectPassTrigger && !isSuperSpeedActive)
+        {
+            isSuperSpeedActive = true;
+            playerBallRigBody.AddForce(Vector3.down * superSpeed, ForceMode.Impulse);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,30 +34,31 @@ public class PlayerBallController : MonoBehaviour
         if (ignoreDoubleCollision)
             return;
 
-        // if (isSuperSpeedActive)
-        // {
-        //     if (!other.transform.GetComponent<Goal>())
-        //     {
-        //         /*foreach (Transform t in other.transform.parent)
-        //         {
-        //             gameObject.AddComponent<TriangleExplosion>();
+        if (isSuperSpeedActive)
+        {
+            if (!collision.transform.GetComponent<GoalController>())
+            {
+                /*
+                foreach (Transform t in other.transform.parent)
+                {
+                    gameObject.AddComponent<TriangleExplosion>();
+  
+                    StartCoroutine(gameObject.GetComponent<TriangleExplosion>().SplitMesh(true));
+                    //Destroy(other.gameObject);
+                    Debug.Log("exploding - exploding - exploding - exploding");
+                }
+                */
+                Destroy(collision.transform.parent.gameObject);
+            }
+        }
 
-        //             StartCoroutine(gameObject.GetComponent<TriangleExplosion>().SplitMesh(true));
-        //             //Destroy(other.gameObject);
-        //             Debug.Log("exploding - exploding - exploding - exploding");
-        //         }*/
-        //         Destroy(other.transform.parent.gameObject);
-
-        //     }
-
-        // }
-        // // If super speed is not active and a death part git hit -> restart game
-        // else
-        // {
-        DeathPartController deathPartController = collision.transform.GetComponent<DeathPartController>();
-        if (deathPartController)
-            deathPartController.HitDeathPart();
-        // }
+        // If super speed is not active and a death part git hit -> restart game
+        else
+        {
+            DeathPartController deathPartController = collision.transform.GetComponent<DeathPartController>();
+            if (deathPartController)
+                deathPartController.HitDeathPart();
+        }
 
         // Sets the ball speed to zero
         playerBallRigBody.velocity = Vector3.zero;
@@ -68,9 +71,8 @@ public class PlayerBallController : MonoBehaviour
         Invoke("AllowCollision", 0.2f);
 
         // Handling super speed
-        // perfectPass = 0;
-        // isSuperSpeedActive = false;
-
+        perfectPass = 0;
+        isSuperSpeedActive = false;
     }
 
     public void ResetBall()

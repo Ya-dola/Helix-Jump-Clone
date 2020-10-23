@@ -52,7 +52,7 @@ public class HelixController : MonoBehaviour
 
         if (level == null)
         {
-            Debug.LogError("No Level " + levelNumber + " found in allLevels list (HelixController). All Levels assigned in list?");
+            Debug.LogError("No Level " + levelNumber + " found in allLevels list from HelixController !!! Check if all the Levels are assigned in the list ?");
             return;
         }
 
@@ -76,7 +76,7 @@ public class HelixController : MonoBehaviour
             spawnPosY -= platformDistance;
             GameObject platform = Instantiate(helixPlatformPrefab, transform);
 
-            Debug.Log("Spawned Level");
+            // Debug.Log("Spawned Level");
             platform.transform.localPosition = new Vector3(0, spawnPosY, 0);
             spawnedPlatforms.Add(platform);
 

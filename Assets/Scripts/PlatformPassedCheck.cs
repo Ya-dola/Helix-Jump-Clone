@@ -8,6 +8,6 @@ public class PlatformPassedCheck : MonoBehaviour
     {
         GameManager.singleton.AddScore(1);
 
-        // FindObjectOfType<PlayerBallController>().perfectPass++;
+        FindObjectOfType<PlayerBallController>().perfectPass++;
     }
 }

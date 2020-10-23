@@ -31,8 +31,6 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        // Debug.Log("Restarting Level");
-
         // Show Ads to User
         // Advertisement.Show();
 
