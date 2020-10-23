@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
 
         // Load the saved high score
         bestScore = PlayerPrefs.GetInt("HighScore");
+
+        Advertisement.Initialize("3875491");
     }
 
     public void NextLevel()
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         // Show Ads to User
-        // Advertisement.Show();
+        Advertisement.Show();
 
         singleton.score = 0;
         FindObjectOfType<PlayerBallController>().ResetBall();
