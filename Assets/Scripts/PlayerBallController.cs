@@ -34,8 +34,6 @@ public class PlayerBallController : MonoBehaviour
         ignoreDoubleCollision = true;
         Invoke("AllowCollision", 0.2f);
 
-        GameManager.singleton.AddScore(1);
-        Debug.Log("Score: " + GameManager.singleton.score);
     }
 
     private void AllowCollision()

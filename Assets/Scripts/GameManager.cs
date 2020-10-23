@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
         else if (singleton != this)
             Destroy(gameObject);
 
-        // // Load the saved highscore
-        // bestScore = PlayerPrefs.GetInt("Highscore");
+        // Load the saved high score
+        bestScore = PlayerPrefs.GetInt("HighScore");
     }
 
     public void NextLevel()
@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
 
         if (score > bestScore)
         {
-            // PlayerPrefs.SetInt("Highscore", score);
+            // To store the high score for the user
+            PlayerPrefs.SetInt("HighScore", score);
             bestScore = score;
         }
     }
