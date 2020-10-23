@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c8b51b0081626d0429801b6628389369, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 4d6d59d4387d073418807d4cac34cfbd, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6325816488231931194, guid: 21b3215aa7fc65a4c8e0f66a20230c84, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6325816488231931194, guid: 21b3215aa7fc65a4c8e0f66a20230c84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -573,68 +573,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1969638683}
   bestScoreText: {fileID: 106775949}
---- !u!1001 &1480064895
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1725816123}
-    m_Modifications:
-    - target: {fileID: 1098240473015908090, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_Name
-      value: Helix Platform (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
---- !u!4 &1480064896 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
-  m_PrefabInstance: {fileID: 1480064895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1725816119
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +668,6 @@ Transform:
   m_LocalScale: {x: 2, y: 20, z: 2}
   m_Children:
   - {fileID: 341905435}
-  - {fileID: 1480064896}
   - {fileID: 486886891}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -747,6 +684,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa73f32ebce1194d8a68547f5d0d0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topPlatformTransform: {fileID: 341905435}
+  goalPlatformTransform: {fileID: 486886891}
+  allLevels:
+  - {fileID: 11400000, guid: aae7efd7e5ee30041aab711feeb37397, type: 2}
+  - {fileID: 11400000, guid: cb6ba2c27fc4c064288df093344d3e7c, type: 2}
+  - {fileID: 11400000, guid: 7d809d364d6d4c34bb5fe150c47ab647, type: 2}
+  helixPlatformPrefab: {fileID: 1098240473015908090, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
 --- !u!1 &1941010752
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bestScore: 0
   score: 0
-  currentStage: 0
+  currentLevel: 0
 --- !u!4 &1971578586
 Transform:
   m_ObjectHideFlags: 0
@@ -1078,7 +1022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098240473015908090, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
       propertyPath: m_Name
-      value: Helix Platform
+      value: Helix Top Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098240473015908090, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1086,7 +1034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1098240473015908091, guid: 9b04f9dff119f4344aa4c355b5dec725, type: 3}
       propertyPath: m_LocalPosition.z

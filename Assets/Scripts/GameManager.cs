@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public int bestScore;
     public int score;
-    public int currentStage = 0;
+    public int currentLevel = 0;
 
     // Creates only a single instance of the GameManager
     public static GameManager singleton;
@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        // currentStage++;
-        // FindObjectOfType<PlayerBallController>().ResetBall();
-        // FindObjectOfType<HelixController>().LoadStage(currentStage);
+        currentLevel++;
+        FindObjectOfType<PlayerBallController>().ResetBall();
+        FindObjectOfType<HelixController>().LoadLevel(currentLevel);
     }
 
     public void RestartLevel()
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
         singleton.score = 0;
         FindObjectOfType<PlayerBallController>().ResetBall();
-        // FindObjectOfType<HelixController>().LoadStage(currentStage);
+        FindObjectOfType<HelixController>().LoadLevel(currentLevel);
     }
 
     public void AddScore(int scoreToAdd)
