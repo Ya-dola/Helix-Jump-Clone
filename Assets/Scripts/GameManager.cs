@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
         // Show Ads to User
         // Advertisement.Show();
 
-        // singleton.score = 0;
-        // FindObjectOfType<PlayerBallController>().ResetBall();
+        singleton.score = 0;
+        FindObjectOfType<PlayerBallController>().ResetBall();
         // FindObjectOfType<HelixController>().LoadStage(currentStage);
     }
 
