@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public PlayerBallController cameraTarget;
+    
     // Keeps the starting distance between the camera and the player ball
     private float offset;
 

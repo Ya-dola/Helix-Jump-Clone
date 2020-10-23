@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerBallController : MonoBehaviour
 {
-    private bool ignoreDoubleCollision;
     public Rigidbody playerBallRigBody;
     public float impulseForce = 5f;
+    private Vector3 startPos;
+    private bool ignoreDoubleCollision;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
+        startPos = transform.position;
     }
 
     // Update is called once per frame
@@ -33,6 +33,9 @@ public class PlayerBallController : MonoBehaviour
 
         ignoreDoubleCollision = true;
         Invoke("AllowCollision", 0.2f);
+
+        GameManager.singleton.AddScore(1);
+        Debug.Log("Score: " + GameManager.singleton.score);
     }
 
     private void AllowCollision()
