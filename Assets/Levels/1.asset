@@ -17,26 +17,30 @@ MonoBehaviour:
   levelBallColor: {r: 0.10196079, g: 0.15445128, b: 0.59607846, a: 1}
   platforms:
   - partCount: 8
-    deathPartCount: 0
+    deathPartCount: 3
   - partCount: 9
-    deathPartCount: 0
+    deathPartCount: 4
   - partCount: 5
-    deathPartCount: 0
+    deathPartCount: 1
   - partCount: 8
-    deathPartCount: 0
+    deathPartCount: 4
   - partCount: 10
-    deathPartCount: 0
+    deathPartCount: 3
   - partCount: 11
-    deathPartCount: 0
+    deathPartCount: 7
   - partCount: 7
-    deathPartCount: 0
+    deathPartCount: 3
   - partCount: 9
-    deathPartCount: 0
+    deathPartCount: 4
   - partCount: 7
-    deathPartCount: 0
+    deathPartCount: 2
   - partCount: 8
-    deathPartCount: 0
-  - partCount: 5
-    deathPartCount: 0
+    deathPartCount: 1
+  - partCount: 6
+    deathPartCount: 3
   - partCount: 11
-    deathPartCount: 0
+    deathPartCount: 2
+  - partCount: 11
+    deathPartCount: 2
+  - partCount: 11
+    deathPartCount: 2
